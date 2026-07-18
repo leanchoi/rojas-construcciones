@@ -173,9 +173,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     };
 
-    btnViewProjects.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const card = e.target.closest('.portfolio-card');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    portfolioCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            const btn = card.querySelector('.btn-view-project');
+            if (!btn) return;
+            
+            // Reproducir sonido de click si está activo
+            playUISound('click');
+            
             const category = card.querySelector('.portfolio-category').textContent;
             const title = btn.getAttribute('data-title');
             const desc = btn.getAttribute('data-desc');
@@ -287,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const image = entry.target;
-                    image.src = image.src; // Forzar carga en fallback, o si tuviera data-src se asignaría
+                    image.src = image.src;
                     image.classList.remove('lazy');
                     imageObserver.unobserve(image);
                 }
@@ -295,4 +301,153 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         lazyImages.forEach(img => imageObserver.observe(img));
     }
+
+    // 10. PARALLAX ISOLOGO EN CONTACTO
+    const parallaxIsologo = document.getElementById('parallax-isologo');
+    if (parallaxIsologo) {
+        window.addEventListener('scroll', () => {
+            const section = document.getElementById('contacto');
+            if (!section) return;
+            const rect = section.getBoundingClientRect();
+            const viewHeight = window.innerHeight;
+            
+            // Si la sección de contacto entra en el viewport, desliza sutilmente el isologo
+            if (rect.top < viewHeight && rect.bottom > 0) {
+                const offset = (viewHeight - rect.top) * 0.12; // Velocidad del desplazamiento
+                parallaxIsologo.style.transform = `translateY(${-offset}px) rotate(-8deg)`;
+            }
+        });
+    }
+
+    // 11. BENTO 3D TILT EFFECT PARA TARJETAS PORTAFOLIO
+    const bentoCards = document.querySelectorAll('.portfolio-card');
+    bentoCards.forEach(card => {
+        // Crear capa de brillo (glare) dinámicamente si no existe
+        let glare = card.querySelector('.glare');
+        if (!glare) {
+            glare = document.createElement('div');
+            glare.className = 'glare';
+            card.appendChild(glare);
+        }
+
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const xPercent = (x / rect.width) * 100;
+            const yPercent = (y / rect.height) * 100;
+            
+            card.style.setProperty('--x', `${xPercent}%`);
+            card.style.setProperty('--y', `${yPercent}%`);
+
+            // Rotación 3D en base al cursor (máximo 5 grados)
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((centerY - y) / centerY) * 5;
+            const rotateY = ((x - centerX) / centerX) * 5;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+            glare.style.opacity = '0';
+        });
+
+        card.addEventListener('mouseenter', () => {
+            glare.style.opacity = '1';
+        });
+    });
+
+    // 12. SPATIAL AUDIO FEEDBACK (Sintetizador Web Audio API Novedoso)
+    let audioCtx = null;
+    let sfxEnabled = localStorage.getItem('sfx_enabled') === 'true';
+    
+    const sfxToggle = document.getElementById('sfx-toggle');
+    const sfxIcon = document.getElementById('sfx-icon');
+
+    if (sfxToggle && sfxIcon) {
+        if (sfxEnabled) {
+            sfxToggle.classList.add('active');
+            sfxIcon.className = 'fa-solid fa-volume-high';
+        } else {
+            sfxToggle.classList.remove('active');
+            sfxIcon.className = 'fa-solid fa-volume-xmark';
+        }
+
+        sfxToggle.addEventListener('click', () => {
+            sfxEnabled = !sfxEnabled;
+            localStorage.setItem('sfx_enabled', sfxEnabled);
+            
+            if (sfxEnabled) {
+                sfxToggle.classList.add('active');
+                sfxIcon.className = 'fa-solid fa-volume-high';
+                initAudioContext();
+                playUISound('click');
+            } else {
+                sfxToggle.classList.remove('active');
+                sfxIcon.className = 'fa-solid fa-volume-xmark';
+            }
+        });
+    }
+
+    function initAudioContext() {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx && audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+    }
+
+    window.playUISound = function(type) {
+        if (!sfxEnabled) return;
+        
+        try {
+            initAudioContext();
+            if (!audioCtx) return;
+
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+
+            const now = audioCtx.currentTime;
+
+            if (type === 'hover') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(140, now); // Bip estético a 140Hz
+                gainNode.gain.setValueAtTime(0.04, now); // Muy sutil
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+                osc.start(now);
+                osc.stop(now + 0.04);
+            } else if (type === 'click') {
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(220, now); // Barrido de clic
+                osc.frequency.exponentialRampToValueAtTime(440, now + 0.07);
+                gainNode.gain.setValueAtTime(0.1, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+                osc.start(now);
+                osc.stop(now + 0.08);
+            }
+        } catch (e) {
+            console.warn('Audio Context error:', e);
+        }
+    };
+
+    // Vincular hover a componentes interactivos clave
+    const interactiveElements = document.querySelectorAll('.nav-link, .tab-btn, .filter-btn, .btn, .portfolio-card, .faq-trigger');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            playUISound('hover');
+        });
+        
+        if (!el.classList.contains('portfolio-card') && !el.classList.contains('faq-trigger') && !el.classList.contains('tab-btn')) {
+            el.addEventListener('click', () => {
+                playUISound('click');
+            });
+        }
+    });
 });
