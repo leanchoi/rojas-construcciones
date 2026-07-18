@@ -238,9 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const trigger = item.querySelector('.faq-trigger');
         if (trigger) {
             trigger.addEventListener('click', () => {
-                // Sonido de click si está activo
-                if (window.playUISound) window.playUISound('click');
-                
                 const isActive = item.classList.contains('active');
                 
                 // Cerrar todos los demás para un acordeón limpio
@@ -254,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 8. FORMULARIO DE CONTACTO AJAX CON FORMSUBMIT
+    // 8. FORMULARIO DE CONTACTO AJAX CON BACKEND PROPIO
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
     const btnSubmit = document.getElementById('btn-submit');
@@ -273,12 +270,17 @@ document.addEventListener('DOMContentLoaded', () => {
             formMessage.className = 'form-message';
 
             const formData = new FormData(contactForm);
+            const dataObj = {};
+            formData.forEach((value, key) => {
+                dataObj[key] = value;
+            });
             
-            // Enviar vía Fetch/AJAX a FormSubmit
+            // Enviar vía Fetch/AJAX a nuestra API local
             fetch(contactForm.action, {
                 method: 'POST',
-                body: formData,
+                body: JSON.stringify(dataObj),
                 headers: {
+                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 }
             })
@@ -286,18 +288,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.ok) {
                     return response.json();
                 }
-                throw new Error('Error al procesar la respuesta del servidor.');
+                throw new Error('Error al registrar la consulta.');
             })
             .then(data => {
                 // Éxito
-                formMessage.textContent = '¡Consulta enviada con éxito! Te responderemos en menos de 24 horas. Recordá verificar tu mail si FormSubmit te solicita la activación única.';
+                formMessage.textContent = '¡Consulta enviada con éxito! Te responderemos en menos de 24 horas.';
                 formMessage.classList.add('success');
+                formMessage.style.display = 'block';
                 contactForm.reset();
             })
             .catch(error => {
                 // Error
                 formMessage.textContent = 'Hubo un problema al enviar tu consulta. Por favor, intentá de nuevo o contactanos directamente por WhatsApp.';
                 formMessage.classList.add('error');
+                formMessage.style.display = 'block';
                 console.error('Contact Form Error:', error);
             })
             .finally(() => {
@@ -380,96 +384,5 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('mouseenter', () => {
             glare.style.opacity = '1';
         });
-    });
-
-    // 12. SPATIAL AUDIO FEEDBACK (Sintetizador Web Audio API Novedoso)
-    let audioCtx = null;
-    let sfxEnabled = localStorage.getItem('sfx_enabled') === 'true';
-    
-    const sfxToggle = document.getElementById('sfx-toggle');
-    const sfxIcon = document.getElementById('sfx-icon');
-
-    if (sfxToggle && sfxIcon) {
-        if (sfxEnabled) {
-            sfxToggle.classList.add('active');
-            sfxIcon.className = 'fa-solid fa-volume-high';
-        } else {
-            sfxToggle.classList.remove('active');
-            sfxIcon.className = 'fa-solid fa-volume-xmark';
-        }
-
-        sfxToggle.addEventListener('click', () => {
-            sfxEnabled = !sfxEnabled;
-            localStorage.setItem('sfx_enabled', sfxEnabled);
-            
-            if (sfxEnabled) {
-                sfxToggle.classList.add('active');
-                sfxIcon.className = 'fa-solid fa-volume-high';
-                initAudioContext();
-                playUISound('click');
-            } else {
-                sfxToggle.classList.remove('active');
-                sfxIcon.className = 'fa-solid fa-volume-xmark';
-            }
-        });
-    }
-
-    function initAudioContext() {
-        if (!audioCtx) {
-            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        }
-        if (audioCtx && audioCtx.state === 'suspended') {
-            audioCtx.resume();
-        }
-    }
-
-    window.playUISound = function(type) {
-        if (!sfxEnabled) return;
-        
-        try {
-            initAudioContext();
-            if (!audioCtx) return;
-
-            const osc = audioCtx.createOscillator();
-            const gainNode = audioCtx.createGain();
-            
-            osc.connect(gainNode);
-            gainNode.connect(audioCtx.destination);
-
-            const now = audioCtx.currentTime;
-
-            if (type === 'hover') {
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(140, now); // Bip estético a 140Hz
-                gainNode.gain.setValueAtTime(0.04, now); // Muy sutil
-                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
-                osc.start(now);
-                osc.stop(now + 0.04);
-            } else if (type === 'click') {
-                osc.type = 'triangle';
-                osc.frequency.setValueAtTime(220, now); // Barrido de clic
-                osc.frequency.exponentialRampToValueAtTime(440, now + 0.07);
-                gainNode.gain.setValueAtTime(0.1, now);
-                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
-                osc.start(now);
-                osc.stop(now + 0.08);
-            }
-        } catch (e) {
-            console.warn('Audio Context error:', e);
-        }
-    };
-
-    // Vincular hover a componentes interactivos clave
-    const interactiveElements = document.querySelectorAll('.nav-link, .tab-btn, .filter-btn, .btn, .portfolio-card, .faq-trigger');
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            playUISound('hover');
-        });
-        
-        if (!el.classList.contains('portfolio-card') && !el.classList.contains('faq-trigger') && !el.classList.contains('tab-btn')) {
-            el.addEventListener('click', () => {
-                playUISound('click');
-            });
-        }
     });
 });

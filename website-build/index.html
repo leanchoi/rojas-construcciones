@@ -147,6 +147,17 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="nosotros-fundador reveal-fade">
+                        <div class="fundador-avatar">
+                            <img src="./images/cesar-rojas.jpg" alt="César Rojas">
+                        </div>
+                        <div class="fundador-detalles">
+                            <h4 class="fundador-nombre">César Rojas</h4>
+                            <p class="fundador-cargo">Socio Fundador & Director de Obra</p>
+                            <p class="fundador-cita">"Llevamos más de 30 años construyendo con la firme convicción de que cada obra debe ser un legado de solidez en nuestra Patagonia."</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="nosotros-images reveal-right">
@@ -459,15 +470,8 @@
                 </div>
 
                 <div class="contacto-form-wrapper reveal-right">
-                    <!-- Formulario integrado con FormSubmit para sitio estático -->
-                    <form id="contact-form" action="https://formsubmit.co/ajax/info@rojasconstrucciones.com" method="POST" class="contact-form">
-                        <!-- Redirección opcional en fallback, pero usaremos AJAX -->
-                        <input type="hidden" name="_next" value="https://rojasconstrucciones.com/">
-                        <input type="hidden" name="_subject" value="Nueva consulta de Obra - Rojas Construcciones Web">
-                        <input type="hidden" name="_template" value="table">
-                        
-                        <!-- Honeypot anti-spam -->
-                        <input type="text" name="_honey" style="display:none">
+                    <!-- Formulario integrado con nuestro backend local SQLite/JSON -->
+                    <form id="contact-form" action="/api/contacto" method="POST" class="contact-form">
                         
                         <div class="form-group">
                             <label for="name">Nombre Completo *</label>
@@ -568,11 +572,6 @@
         </div>
     </div>
     
-    <!-- Botón Flotante de Control de Sonido (SFX) -->
-    <button id="sfx-toggle" class="sfx-toggle-btn" aria-label="Activar/Desactivar efectos de sonido">
-        <i class="fa-solid fa-volume-xmark" id="sfx-icon"></i>
-    </button>
-
     <!-- Scripts -->
     <script src="./js/main.js"></script>
 </body>
