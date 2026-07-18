@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Con más de 30 años de trayectoria y más de 400 obras terminadas en toda la Patagonia, Rojas Construcciones ofrece soluciones residenciales, comerciales y de infraestructura en Esquel. Confianza, seguridad y calidad garantizadas.">
+    <meta name="keywords" content="construccion, refacciones, esquel, chubut, patagonia, obras nuevas, remodelaciones, construccion esquel, rojas construcciones">
+    <meta name="author" content="Rojas Construcciones">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rojasconstrucciones.com/">
+    <meta property="og:title" content="Rojas Construcciones | Solidez y Experiencia en la Patagonia">
+    <meta property="og:description" content="Más de 30 años de trayectoria en Esquel y la Patagonia. Construimos proyectos residenciales, comerciales y de infraestructura con máxima solidez, seguridad y transparencia.">
+    <meta property="og:image" content="./images/logo-share.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rojasconstrucciones.com/">
+    <meta property="twitter:title" content="Rojas Construcciones | Solidez y Experiencia en la Patagonia">
+    <meta property="twitter:description" content="Más de 30 años de trayectoria en Esquel y la Patagonia. Construimos proyectos residenciales, comerciales y de infraestructura con máxima solidez, seguridad y transparencia.">
+    <meta property="twitter:image" content="./images/logo-share.jpg">
+
+    <title>Rojas Construcciones | Construcción de Calidad en Esquel, Patagonia</title>
+    
+    <!-- Google Fonts: Outfit for headings, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./css/index.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo-area" id="logo-link">
+                <!-- SVG Vectorial elegante para el Logo que combina Glifo y Texto -->
+                <svg class="logo-svg" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Icono / Glifo (Casa Abstracta / Estructura R) -->
+                    <path d="M12 42V18L30 8L48 18V42H36V30H24V42H12Z" fill="var(--color-accent)" />
+                    <path d="M30 18L30 30" stroke="var(--color-bg)" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M24 30H36" stroke="var(--color-bg)" stroke-width="2"/>
+                    <!-- Texto de Marca -->
+                    <text x="62" y="29" font-family="'Outfit', sans-serif" font-size="20" font-weight="800" fill="var(--color-text)" letter-spacing="1">ROJAS</text>
+                    <text x="62" y="44" font-family="'Outfit', sans-serif" font-size="11" font-weight="500" fill="var(--color-accent)" letter-spacing="3.5">CONSTRUCCIONES</text>
+                </svg>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                    <li><a href="#faq" class="nav-link">Preguntas</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="https://wa.me/5492945413364?text=Hola!%20Me%20contacto%20desde%20la%20web%20para%20realizar%20una%20consulta%20por%20una%20obra." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-header">
+                    <i class="fab fa-whatsapp"></i> <span>Escribinos</span>
+                </a>
+                <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Abrir menú de navegación">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge reveal-fade"><i class="fa-solid fa-map-pin"></i> Esquel & Patagonia</span>
+                    <h1 class="hero-title reveal-slide-up">Construimos proyectos con la solidez que exige la Patagonia</h1>
+                    <p class="hero-subtitle reveal-slide-up">Más de 30 años de experiencia y 400 obras terminadas avalan nuestro compromiso y transparencia en cada etapa de tu proyecto.</p>
+                    <div class="hero-actions reveal-fade">
+                        <a href="#proyectos" class="btn btn-primary">Ver Obras</a>
+                        <a href="#contacto" class="btn btn-outline">Iniciar Consulta</a>
+                    </div>
+                </div>
+                
+                <!-- Tarjetas de Impacto Rápido -->
+                <div class="hero-stats reveal-fade">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <h3 class="stat-number">+30</h3>
+                        <p class="stat-text">Años de Trayectoria</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-trowel-bricks"></i></div>
+                        <h3 class="stat-number">+400</h3>
+                        <p class="stat-text">Obras Finalizadas</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3 class="stat-number">100%</h3>
+                        <p class="stat-text">Formal y Seguro</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#nosotros" class="scroll-down-indicator" aria-label="Ir a la siguiente sección">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </a>
+        </section>
+
+        <!-- Nosotros Section -->
+        <section id="nosotros" class="nosotros-section section-padding">
+            <div class="container grid-2">
+                <div class="nosotros-text reveal-left">
+                    <span class="section-badge">Trayectoria</span>
+                    <h2 class="section-title">25 años construyendo confianza en el sur argentino</h2>
+                    <p class="section-description text-large">
+                        Somos una empresa familiar formalmente constituida en la ciudad de Esquel, Chubut. Nos dedicamos a transformar planos y sueños en realidades tangibles y duraderas.
+                    </p>
+                    <p class="section-description">
+                        Sabemos que construir en la Patagonia implica desafíos climáticos y logísticos particulares. Por eso, combinamos técnicas constructivas tradicionales de alta resistencia con materiales adaptados al clima patagónico, asegurando eficiencia térmica, robustez estructural y una terminación estética superior.
+                    </p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-circle-check feature-icon"></i>
+                            <div>
+                                <h4>Seguridad Jurídica y Comercial</h4>
+                                <p>Contratos transparentes y cumplimiento riguroso de normativas y plazos.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-circle-check feature-icon"></i>
+                            <div>
+                                <h4>Relación Precio-Calidad Real</h4>
+                                <p>Presupuestos honestos, sin sorpresas ni sobrecostos imprevistos a mitad de obra.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nosotros-images reveal-right">
+                    <div class="image-wrapper">
+                        <!-- Fallback de gradiente visual si la imagen no se carga -->
+                        <div class="image-fallback fallback-gradient-1">
+                            <i class="fa-solid fa-house-chimney"></i>
+                            <span>Obras en la Patagonia</span>
+                        </div>
+                        <img src="./images/obra-1.jpg" alt="Obra residencial en construcción, Esquel" class="img-responsive rounded-corners lazy" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Section -->
+        <section id="servicios" class="servicios-section section-padding alt-bg">
+            <div class="container">
+                <div class="text-center reveal-fade">
+                    <span class="section-badge">Servicios</span>
+                    <h2 class="section-title">Soluciones constructivas a tu medida</h2>
+                    <p class="section-subtitle max-w-600">Desde pequeñas refacciones comerciales hasta grandes proyectos civiles y residenciales, nos encargamos de todo el proceso.</p>
+                </div>
+
+                <!-- Tabs de Servicios Interactivos -->
+                <div class="tabs-container reveal-fade">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="residencial">
+                            <i class="fa-solid fa-house-chimney"></i> Residencial
+                        </button>
+                        <button class="tab-btn" data-tab="comercial">
+                            <i class="fa-solid fa-store"></i> Comercial
+                        </button>
+                        <button class="tab-btn" data-tab="infraestructura">
+                            <i class="fa-solid fa-building-shield"></i> Infraestructura
+                        </button>
+                    </div>
+
+                    <div class="tab-content-wrapper">
+                        <!-- Tab Residencial -->
+                        <div class="tab-content active" id="tab-residencial">
+                            <div class="grid-2">
+                                <div class="tab-text">
+                                    <h3>Hogares diseñados para perdurar</h3>
+                                    <p>Creamos viviendas unifamiliares y complejos residenciales pensados para el entorno patagónico. Nos especializamos tanto en obras nuevas como en ampliaciones inteligentes y refacciones de alta gama.</p>
+                                    <ul class="styled-list">
+                                        <li><i class="fa-solid fa-check"></i> Construcción llave en mano (desde cimientos hasta llave).</li>
+                                        <li><i class="fa-solid fa-check"></i> Refacciones húmedas y revestimientos térmicos.</li>
+                                        <li><i class="fa-solid fa-check"></i> Ampliaciones integradas con la estructura preexistente.</li>
+                                        <li><i class="fa-solid fa-check"></i> Estructuras preparadas para alta carga sísmica y de nieve.</li>
+                                    </ul>
+                                </div>
+                                <div class="tab-image">
+                                    <div class="image-fallback fallback-gradient-2">
+                                        <i class="fa-solid fa-hammer"></i>
+                                        <span>Construcción Residencial</span>
+                                    </div>
+                                    <img src="./images/servicio-residencial.jpg" alt="Construcción Residencial" class="rounded-corners lazy" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab Comercial -->
+                        <div class="tab-content" id="tab-comercial">
+                            <div class="grid-2">
+                                <div class="tab-text">
+                                    <h3>Espacios de trabajo funcionales y modernos</h3>
+                                    <p>Diseñamos y ejecutamos reformas para locales comerciales, oficinas corporativas, consultorios médicos y negocios que necesitan transmitir solidez y profesionalismo a sus clientes.</p>
+                                    <ul class="styled-list">
+                                        <li><i class="fa-solid fa-check"></i> Renovación estética y funcional de fachadas e interiores.</li>
+                                        <li><i class="fa-solid fa-check"></i> Adaptación de espacios a normativas comerciales vigentes.</li>
+                                        <li><i class="fa-solid fa-check"></i> Instalaciones eléctricas y de servicios especiales.</li>
+                                        <li><i class="fa-solid fa-check"></i> Tiempos de ejecución optimizados para minimizar el cierre del local.</li>
+                                    </ul>
+                                </div>
+                                <div class="tab-image">
+                                    <div class="image-fallback fallback-gradient-3">
+                                        <i class="fa-solid fa-store"></i>
+                                        <span>Locales Comerciales</span>
+                                    </div>
+                                    <img src="./images/servicio-comercial.jpg" alt="Obras Comerciales" class="rounded-corners lazy" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab Infraestructura -->
+                        <div class="tab-content" id="tab-infraestructura">
+                            <div class="grid-2">
+                                <div class="tab-text">
+                                    <h3>Proyectos públicos y de gran envergadura</h3>
+                                    <p>Contamos con la capacidad operativa, de equipamiento y personal calificado para responder a licitaciones, obras civiles para el estado, galpones industriales y estructuras de hormigón armado de gran escala.</p>
+                                    <ul class="styled-list">
+                                        <li><i class="fa-solid fa-check"></i> Licitaciones y obras civiles municipales y provinciales.</li>
+                                        <li><i class="fa-solid fa-check"></i> Naves industriales, tinglados y depósitos de almacenamiento.</li>
+                                        <li><i class="fa-solid fa-check"></i> Obras de hormigón armado de alta resistencia estructural.</li>
+                                        <li><i class="fa-solid fa-check"></i> Cumplimiento estricto de auditorías técnicas y cronogramas públicos.</li>
+                                    </ul>
+                                </div>
+                                <div class="tab-image">
+                                    <div class="image-fallback fallback-gradient-1">
+                                        <i class="fa-solid fa-helmet-safety"></i>
+                                        <span>Grandes Estructuras</span>
+                                    </div>
+                                    <img src="./images/servicio-infraestructura.jpg" alt="Infraestructura" class="rounded-corners lazy" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos Section -->
+        <section id="proyectos" class="proyectos-section section-padding">
+            <div class="container">
+                <div class="text-center reveal-fade">
+                    <span class="section-badge">Portafolio</span>
+                    <h2 class="section-title">Obras que marcan nuestro camino</h2>
+                    <p class="section-subtitle max-w-600">Te mostramos algunos de nuestros proyectos más recientes en Esquel y los alrededores.</p>
+                </div>
+
+                <!-- Filtros de Proyectos -->
+                <div class="portfolio-filters reveal-fade">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="residencial">Residenciales</button>
+                    <button class="filter-btn" data-filter="comercial">Comerciales</button>
+                    <button class="filter-btn" data-filter="reforma">Refacciones</button>
+                </div>
+
+                <!-- Grilla de Proyectos -->
+                <div class="portfolio-grid reveal-fade" id="portfolio-grid">
+                    <!-- Proyecto 1 -->
+                    <div class="portfolio-item" data-category="residencial">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image-wrapper">
+                                <div class="image-fallback fallback-gradient-2">
+                                    <i class="fa-solid fa-mountain-sun"></i>
+                                    <span>Casa de Montaña</span>
+                                </div>
+                                <img src="./images/proyecto-1.jpg" alt="Vivienda Unifamiliar en Esquel" class="lazy" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+                                <div class="portfolio-overlay">
+                                    <span class="portfolio-category">Residencial</span>
+                                    <h4 class="portfolio-item-title">Vivienda Unifamiliar Alturas</h4>
+                                    <p class="portfolio-location"><i class="fa-solid fa-location-dot"></i> Villa Ayelén, Esquel</p>
+                                    <button class="btn-view-project" data-img="./images/proyecto-1.jpg" data-title="Vivienda Unifamiliar Alturas" data-desc="Casa construida en terreno inclinado con base de hormigón reforzado, vigas a la vista y revestimiento de madera patagónica de alta durabilidad térmica.">Ver más</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2 -->
+                    <div class="portfolio-item" data-category="comercial">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image-wrapper">
+                                <div class="image-fallback fallback-gradient-3">
+                                    <i class="fa-solid fa-shop"></i>
+                                    <span>Local Comercial</span>
+                                </div>
+                                <img src="./images/proyecto-2.jpg" alt="Local Comercial Centro" class="lazy" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+                                <div class="portfolio-overlay">
+                                    <span class="portfolio-category">Comercial</span>
+                                    <h4 class="portfolio-item-title">Local y Oficinas Centro</h4>
+                                    <p class="portfolio-location"><i class="fa-solid fa-location-dot"></i> Centro Comercial, Esquel</p>
+                                    <button class="btn-view-project" data-img="./images/proyecto-2.jpg" data-title="Local y Oficinas Centro" data-desc="Refacción integral de local comercial de indumentaria y oficinas administrativas en la planta alta. Diseño minimalista e iluminación embutida.">Ver más</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 3 -->
+                    <div class="portfolio-item" data-category="reforma">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image-wrapper">
+                                <div class="image-fallback fallback-gradient-1">
+                                    <i class="fa-solid fa-hammer"></i>
+                                    <span>Ampliación Quincho</span>
+                                </div>
+                                <img src="./images/proyecto-3.jpg" alt="Quincho Familiar" class="lazy" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+                                <div class="portfolio-overlay">
+                                    <span class="portfolio-category">Refacción</span>
+                                    <h4 class="portfolio-item-title">Ampliación de Quincho Patagónico</h4>
+                                    <p class="portfolio-location"><i class="fa-solid fa-location-dot"></i> Valle de Esquel</p>
+                                    <button class="btn-view-project" data-img="./images/proyecto-3.jpg" data-title="Ampliación de Quincho Patagónico" data-desc="Estructura adosada con parrillero integrado, amplios ventanales DVH (Doble Vidriado Hermético) para optimizar la pérdida de calor y techado en chapa negra.">Ver más</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 4 -->
+                    <div class="portfolio-item" data-category="residencial">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image-wrapper">
+                                <div class="image-fallback fallback-gradient-3">
+                                    <i class="fa-solid fa-trowel"></i>
+                                    <span>Vivienda Moderna</span>
+                                </div>
+                                <img src="./images/proyecto-4.jpg" alt="Complejo Dúplex" class="lazy" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+                                <div class="portfolio-overlay">
+                                    <span class="portfolio-category">Residencial</span>
+                                    <h4 class="portfolio-item-title">Complejo de Dúplex Modernos</h4>
+                                    <p class="portfolio-location"><i class="fa-solid fa-location-dot"></i> Av. Ameghino, Esquel</p>
+                                    <button class="btn-view-project" data-img="./images/proyecto-4.jpg" data-title="Complejo de Dúplex Modernos" data-desc="Construcción llave en mano de 4 departamentos tipo dúplex. Losa radiante, pisos de porcelanato y revestimientos de primera calidad.">Ver más</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section section-padding alt-bg">
+            <div class="container">
+                <div class="text-center reveal-fade">
+                    <span class="section-badge">FAQ</span>
+                    <h2 class="section-title">Preguntas Frecuentes</h2>
+                    <p class="section-subtitle max-w-600">Resolvé tus dudas comunes antes de iniciar el contacto de obra.</p>
+                </div>
+
+                <div class="faq-accordion max-w-800 reveal-fade">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>¿Cómo se formaliza un presupuesto y contratación de obra?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-panel">
+                            <p>Realizamos una primera visita al terreno o espacio a refaccionar, estudiamos los planos técnicos del arquitecto y elaboramos un presupuesto detallado por rubro e ítem de obra. La contratación se formaliza por escrito, especificando etapas de pago asociadas a hitos de avance medibles y la fecha de entrega acordada.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>¿Hacen construcciones bajo modalidad llave en mano?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-panel">
+                            <p>Sí, nos encargamos de todo el proceso de aprovisionamiento de materiales, gestión de subcontratos (plomería, electricidad, gas matriculado, techadores) e inspección técnica constante. Vos solo tenés que preocuparte por elegir los acabados y recibir la llave del proyecto terminado.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>¿Qué tipos de garantías ofrecen al finalizar una obra?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-panel">
+                            <p>Ofrecemos garantía escrita sobre los vicios de construcción estructurales y de instalaciones por un periodo de un año posterior a la entrega de la obra. Además, todos los materiales utilizados cuentan con su respectiva garantía del fabricante.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>¿Tienen capacidad de construir fuera de la zona de Esquel?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-panel">
+                            <p>Sí, abarcamos zonas aledañas de la Comarca Andina y la cordillera chubutense (Trevelin, Cholila, Lago Puelo, El Bolsón) evaluando la factibilidad logística previa del proyecto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto Section -->
+        <section id="contacto" class="contacto-section section-padding">
+            <div class="container grid-2">
+                <div class="contacto-info reveal-left">
+                    <span class="section-badge">Contacto</span>
+                    <h2 class="section-title">Hablemos de tu próximo proyecto</h2>
+                    <p class="section-description">
+                        Dejanos tu consulta o escribinos por WhatsApp. Nos pondremos en contacto con vos en menos de 24 horas para coordinar una reunión o cotizar tus planos.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4>Teléfono / WhatsApp</h4>
+                                <a href="tel:+5492945413364">+54 9 2945 413364</a>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:info@rojasconstrucciones.com">info@rojasconstrucciones.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4>Ubicación Comercial</h4>
+                                <p>Esquel, Chubut, Patagonia Argentina</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-networks">
+                        <h4>Seguinos en Redes</h4>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/rojas__constructora/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacto-form-wrapper reveal-right">
+                    <!-- Formulario integrado con FormSubmit para sitio estático -->
+                    <form id="contact-form" action="https://formsubmit.co/ajax/info@rojasconstrucciones.com" method="POST" class="contact-form">
+                        <!-- Redirección opcional en fallback, pero usaremos AJAX -->
+                        <input type="hidden" name="_next" value="https://rojasconstrucciones.com/">
+                        <input type="hidden" name="_subject" value="Nueva consulta de Obra - Rojas Construcciones Web">
+                        <input type="hidden" name="_template" value="table">
+                        
+                        <!-- Honeypot anti-spam -->
+                        <input type="text" name="_honey" style="display:none">
+                        
+                        <div class="form-group">
+                            <label for="name">Nombre Completo *</label>
+                            <input type="text" id="name" name="name" required placeholder="Ej: Juan Pérez">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Teléfono de Contacto *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Ej: +54 9 2945 000000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" required placeholder="Ej: juan.perez@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tipo_obra">Tipo de Proyecto *</label>
+                            <select id="tipo_obra" name="tipo_obra" required>
+                                <option value="" disabled selected>Seleccioná una opción...</option>
+                                <option value="obra_nueva">Obra Nueva desde Cero</option>
+                                <option value="refaccion">Refacción o Ampliación</option>
+                                <option value="comercial">Local Comercial / Oficina</option>
+                                <option value="infraestructura">Civil / Licitaciones</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensaje / Detalle de la obra *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Contanos brevemente qué tenés en mente, metros cuadrados aproximados, o si contás con planos..."></textarea>
+                        </div>
+
+                        <!-- Feedback del Formulario -->
+                        <div id="form-message" class="form-message"></div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full-width" id="btn-submit">
+                            <span>Enviar Consulta</span> <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <svg class="logo-svg footer-logo" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 42V18L30 8L48 18V42H36V30H24V42H12Z" fill="var(--color-accent)" />
+                    <text x="62" y="29" font-family="'Outfit', sans-serif" font-size="20" font-weight="800" fill="#ffffff" letter-spacing="1">ROJAS</text>
+                    <text x="62" y="44" font-family="'Outfit', sans-serif" font-size="11" font-weight="500" fill="var(--color-accent)" letter-spacing="3.5">CONSTRUCCIONES</text>
+                </svg>
+                <p class="footer-description">Construcción sólida y de calidad en Esquel y la comarca. Confianza avalada por nuestra historia de obras bien hechas.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fa-solid fa-phone"></i> +54 9 2945 413364</p>
+                <p><i class="fa-solid fa-envelope"></i> info@rojasconstrucciones.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Esquel, Chubut, Patagonia</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 Rojas Construcciones. Todos los derechos reservados.</p>
+                <p class="developer-credits">Diseño Premium por Antigravity AI</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox de Proyecto (Modal interactivo) -->
+    <div id="project-modal" class="project-modal" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-wrapper">
+            <button class="modal-close" id="modal-close" aria-label="Cerrar modal">&times;</button>
+            <div class="modal-content">
+                <div class="modal-image-col">
+                    <img id="modal-img" src="" alt="Imagen de proyecto">
+                </div>
+                <div class="modal-text-col">
+                    <span id="modal-badge" class="section-badge">Categoría</span>
+                    <h3 id="modal-title">Título del Proyecto</h3>
+                    <p id="modal-desc">Descripción detallada.</p>
+                    <div class="modal-actions">
+                        <a href="https://wa.me/5492945413364" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Consultar por esta obra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
