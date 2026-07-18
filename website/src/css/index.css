@@ -7,12 +7,12 @@
    1. VARIABLES Y VARIABLES DEL SISTEMA (Design Tokens)
    -------------------------------------------------------------------------- */
 :root {
-    /* Paleta de Colores Patagónica */
+    /* Paleta de Colores Patagónica con Acento Rojo Corporativo */
     --color-bg: #121214;          /* Negro carbón cálido */
     --color-bg-alt: #1a1a1f;      /* Gris piedra oscuro */
     --color-bg-card: #222228;     /* Gris para tarjetas */
-    --color-accent: #c28b47;      /* Cobre patagónico / Madera noble */
-    --color-accent-hover: #e0a359;
+    --color-accent: #e30613;      /* Rojo Rojas Construcciones */
+    --color-accent-hover: #be050f;
     --color-text: #f4f4f5;        /* Marfil suave */
     --color-text-muted: #a1a1aa;  /* Gris atenuado */
     --color-whatsapp: #25d366;
@@ -22,7 +22,7 @@
     --color-success: #10b981;
 
     /* Gradientes Premium */
-    --gradient-hero: linear-gradient(135deg, rgba(18, 18, 20, 0.92) 0%, rgba(26, 26, 31, 0.88) 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(18, 18, 20, 0.94) 0%, rgba(26, 26, 31, 0.88) 100%);
     --gradient-card: linear-gradient(180deg, rgba(34, 34, 40, 0.4) 0%, rgba(34, 34, 40, 0.8) 100%);
     --gradient-fallback-1: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     --gradient-fallback-2: linear-gradient(135deg, #27272a 0%, #18181b 100%);
@@ -36,7 +36,7 @@
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.3);
-    --shadow-accent: 0 8px 20px rgba(194, 139, 71, 0.2);
+    --shadow-accent: 0 8px 20px rgba(227, 6, 19, 0.2);
     
     /* Transiciones */
     --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -325,9 +325,36 @@ button {
     justify-content: space-between;
 }
 
-.logo-svg {
-    height: 45px;
+.logo-img {
+    height: 38px;
     width: auto;
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 32px;
+    }
+}
+
+.logo-scrolled {
+    display: none !important;
+}
+
+.header.scrolled .logo-default {
+    display: none !important;
+}
+
+.header.scrolled .logo-scrolled {
+    display: block !important;
+}
+
+.footer-logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+    margin-bottom: 20px;
 }
 
 .nav-menu {
