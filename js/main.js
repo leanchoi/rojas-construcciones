@@ -179,9 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = card.querySelector('.btn-view-project');
             if (!btn) return;
             
-            // Reproducir sonido de click si está activo
-            playUISound('click');
-            
             const category = card.querySelector('.portfolio-category').textContent;
             const title = btn.getAttribute('data-title');
             const desc = btn.getAttribute('data-desc');
