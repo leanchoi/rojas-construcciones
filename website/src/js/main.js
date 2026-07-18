@@ -232,6 +232,28 @@ document.addEventListener('DOMContentLoaded', () => {
         revealElements.forEach(el => el.classList.add('revealed'));
     }
 
+    // 7.5. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ)
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        if (trigger) {
+            trigger.addEventListener('click', () => {
+                // Sonido de click si está activo
+                if (window.playUISound) window.playUISound('click');
+                
+                const isActive = item.classList.contains('active');
+                
+                // Cerrar todos los demás para un acordeón limpio
+                faqItems.forEach(otherItem => otherItem.classList.remove('active'));
+                
+                // Si no estaba activo, abrir el actual
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+
     // 8. FORMULARIO DE CONTACTO AJAX CON FORMSUBMIT
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
