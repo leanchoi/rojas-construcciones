@@ -53,6 +53,11 @@ try {
         copyDir(path.join(srcDir, 'js'), path.join(destDir, 'js'));
         console.log('- Carpeta js/ copiada.');
     }
+    
+    if (fs.existsSync(path.join(srcDir, 'api'))) {
+        copyDir(path.join(srcDir, 'api'), path.join(destDir, 'api'));
+        console.log('- Carpeta api/ (PHP proxies) copiada.');
+    }
 
     // 3. Copiar recursos públicos (images/)
     if (fs.existsSync(path.join(publicDir, 'images'))) {
