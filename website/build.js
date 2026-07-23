@@ -58,6 +58,11 @@ try {
         copyDir(path.join(srcDir, 'api'), path.join(destDir, 'api'));
         console.log('- Carpeta api/ (PHP proxies) copiada.');
     }
+    
+    if (fs.existsSync(path.join(srcDir, 'admin'))) {
+        copyDir(path.join(srcDir, 'admin'), path.join(destDir, 'admin'));
+        console.log('- Carpeta admin/ (Panel de Administración) copiada.');
+    }
 
     // 3. Copiar recursos públicos (images/)
     if (fs.existsSync(path.join(publicDir, 'images'))) {
