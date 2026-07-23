@@ -831,7 +831,7 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) ||
     // Cargar consultas iniciales
     async function loadQueries() {
         try {
-            const response = await fetch('../api/consultas');
+            const response = await fetch('../api/consultas/index.php');
             if (!response.ok) throw new Error('Error al cargar datos.');
             currentQueries = await response.json();
             
@@ -999,7 +999,7 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) ||
         currentQueries[queryIndex][field] = value;
 
         try {
-            const response = await fetch('../api/consultas/update', {
+            const response = await fetch('../api/consultas/update/index.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -1064,7 +1064,7 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) ||
 
             <div class="editable-field">
                 <label>Notas internas</label>
-                <textarea class="input-inline textarea-inline" placeholder="Agregar detalles sobre el presupuesto o reuniones..." onchange="updateQueryField('${q.id}', 'notes', this.value); q.notas = this.value;">${escapeHTML(q.notas)}</textarea>
+                <textarea class="input-inline textarea-inline" placeholder="Agregar detalles sobre el presupuesto o reuniones..." onchange="updateQueryField('${q.id}', 'notas', this.value); q.notas = this.value;">${escapeHTML(q.notas)}</textarea>
             </div>
 
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px solid var(--color-border); padding-top: 15px;">
